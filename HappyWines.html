@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rose</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+	$(document).ready(function(){
+	var name=document.getElementById('userid');
+	name.focus();});
+	
+
+function validateForm()
+        {	
+			var name=document.getElementById('userid');
+            var userid=document.forms["HAPPYshop"]["userid"].value;
+            userid_null=0;
+            userid_patt=0;
+            if (userid=="")
+            {
+                alert("user id shouldnot be empty");
+				name.focus();
+				userid_null=0;
+            }
+            else
+            {
+				userid_null=1;
+            }
+            if(userid_null==1)
+            {
+				var n = x.length;
+				if(n>4 && n<13 && /^[A-Za-z]+$/.test(userid) )
+				{ 
+					userid_patt=1;
+					
+				}
+				else
+				{	
+					alert("length should be between 5 to 12 characters");
+					name.focus();
+					userid_patt=0;
+					
+				}
+               
+            }
+			
+			
+            var password=document.forms["HAPPYshop"]["password"].value;
+             password_null=0;
+             password_patt=0;
+            if(password=="")
+            {
+                alert("Password should not be empty");
+            }
+            else
+            {
+           password_null=1;
+            }
+            if(password_null==1)
+            {
+                if (y.length >6 && y.length<13 && /^[A-Za-z0-9]+$/.test(password))
+				{
+					password_patt=1;
+					
+				}
+				else
+				{
+					alert("length should be between 7 to 12 characters");
+					password_patt=0;
+				}
+            }
+			var confirmpassword=document.forms["HAPPYshop"]["confirm password"].value;
+            confirmpassword_null=0;
+            confirmpassword_patt=0;
+			confirmpassword_match=0;
+            if(confirmpassword=="")
+            {
+                alert("Password should not be empty");
+            }
+            else
+            {
+            confirmpassword_null=1;
+            }
+            if(confirmpassword_null==1)
+            {
+                if (y.length >6 && y.length<13 && /^[A-Za-z0-9]+$/.test(confirmpassword))
+				{
+					confirmpassword_patt=1;
+					if(password==confirmpassword)
+					{
+						confirmpassword_match=1;
+					}
+					else 
+					{	
+					alert("password feild does not match that of the confirm password");
+						confirmpassword_match=0;
+					}
+				}
+				else
+				{
+					alert("length should be between 7 to 12 characters");
+					confirmpassword_patt=0;
+				}
+            }
+			
+            
+			
+			
+			var name=document.forms["HAPPYshop"]["name"].value;
+            name_null=0;
+            name_pattern=0;
+            if(name=="")
+            {
+                alert("name should not be empty");
+				name_null=0;
+            }
+            else
+            {
+            name_null=1;
+            }
+			var result=/^[A-Za-z]{10}$/.test(name);
+            if(name_null==1)
+            {
+                if (result)
+				{
+					name_pattern=1;
+				}
+				else
+				{
+					alert("length of name should be 10 characters");
+					name_pattern=0;
+				}
+            }
+			
+			
+			var address=document.forms["HAPPYshop"]["address"].value;
+            address_null=0;
+            address_pattern=0;
+            if(address=="")
+            {
+                alert("address should not be empty");
+				address_null=0;
+            }
+            else
+            {
+            address_null=1;
+            }
+            if(address_null==1)
+            {	
+                if (/^[A-Za-z0-9]+$/.test(address) )
+				{
+					address_pattern=1;
+				}
+				else
+				{
+					alert("accepts only alphanumeric");
+					address_pattern=0;
+				}
+            }
+			
+			var country=document.forms["HAPPYshop"]["country"].value;
+            country_null=0;
+            if(country=="")
+            {
+                alert("select a country from the list");
+            }
+			else
+			{
+				country_null=1;
+			}
+			
+			var zipcode=document.forms["HAPPYshop"]["zipcode"].value;
+            zipcode_null=0;
+            zipcode_pattern=0;
+            if(zipcode=="")
+            {
+                alert("zipcode should not be empty");
+				zipcode_status=0;
+            }
+            else
+            {
+            zipcode_null=1;
+            }
+            if(zipcode_null==1)
+            {	
+                if (/^[0-9]+$/.test(zipcode) )
+				{
+					zipcode_pattern=1;
+				}
+				else
+				{
+					alert("Zip code must have only numbers");
+					zipcode_pattern=0;
+				}
+            }
+			
+			var email=document.forms["HAPPYshop"]["email"].value;
+            email_null=0;
+            email_pattern=0;
+            if(email=="")
+            {
+                alert("email should not be empty");
+				email_status=0;
+            }
+            else
+            {
+            email_null=1;
+            }
+            if(email_null==1)
+            {	
+                if (/^\w+\.?\w+@\w+\.\w+$/.test(email) )
+				{
+					email_pattern=1;
+				}
+				else
+				{
+					alert("You have entered a invalid email address");
+					email_pattern=0;
+				}
+            }
+			
+			
+			var about=document.forms["HAPPYshop"]["about"].value;
+            about_null=0;
+            about_pattern=0;
+            if(about=="")
+            {
+                alert("about should not be empty");
+				about_null=0;
+            }
+            else
+            {
+            about_null=1;
+            }
+            if(about_null==1)
+            {	
+                if (/^[A-Za-z]+$/.test(about) )
+				{
+					about_pattern=1;
+				}
+				else
+				{
+					alert("invalid information");
+					about_pattern=0;
+				}
+            }
+			
+			
+			
+			
+			
+			if (userid_patt==1 &&  password_patt==1 &&  confirmpassword_patt==1 && confirmpassword_match==1 && name_pattern==1 &&  address_pattern==1 && country_null==1 && zipcode_pattern==1 && email_pattern==1 && about_pattern==1)
+            {
+                alert("Form submitted successfully");
+				return true;
+            }
+            else
+            {
+                alert("Form not submitted");
+				return false;
+            }
+			
+		return false;
+
+        }
+		
+		function resetForm() {
+		document.getElementById("HAPPYshop").reset();
+		}
+		
+     </script>
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+    <style>
+        .header{
+            
+            margin: auto;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            background-color: aquamarine;
+            text-shadow: 2px 2px 4px brown ;
+        }
+        .abc {
+        max-width: 500px;
+        margin: auto;
+        background-color: #3CBC8D;
+            }
+		.btn{
+		max-width: 500px;
+        margin: auto;
+		}
+        
+        body {background-color: coral;
+        margin: 0;}
+		
+        .a{
+        max-width: auto;
+        margin: 20px;  
+		text-align: center;		
+        }
+		.rtitle
+		{
+			max-width: auto;
+			margin: 30px;
+			text-align: center;
+			color: blue;
+		}
+		.btitle
+		{
+			max-width: auto;
+			margin: 30px;
+			text-align: center;
+			color: blue;
+		}
+    </style>
+
+    
+</head>
+
+<body>
+
+    <h1 class=header style="text-align: center;">Welcome to HAPPYshop</h1>
+	<h3 class=rtitle><u>Registration Form</u></h3>
+    <div class=abc >
+        
+    <form name="HAPPYshop" id="HAPPYshop"  action="xyz.html" onsubmit="return validateForm()" method="post">
+        <table frame=box>
+            <tr>
+            <td>Userid </td>
+            <td><input type="text" id="userid" name="userid" placeholder="Enter Name"/></td>
+            </tr>
+			<tr>
+            <td>Password </td>
+            <td><input type="password" name="password" placeholder="Enter Password"/></td>
+            </tr>
+			<tr>
+            <td> Confirm Password </td>
+            <td><input type="password" name="confirm password" placeholder="Confirm Password"/></td>
+            </tr>
+			<tr>
+            <td>Name </td>
+			<td><input type="text" name="name" placeholder="Enter Name"/></td>
+            </tr>
+			<tr>
+            <td>Address </td>
+			<td><input type="text" name="address" placeholder="Enter Address"/></td>
+            
+            </tr>
+            <tr>
+			<tr>
+            <td>Country</td>
+            <td><select id="country" name="country" >
+					<option value="" disabled selected>Please select a country</option>
+                    <option value="Austraila">Austraila</option>
+					<option value="India">India</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Bangladesh">Bangladesh</option>
+					 
+                    </select> 
+	
+                </td>
+            </tr>
+			<td>Zip code </td>
+            <td><input type="text" name="zipcode" placeholder="Enter zipcode"/></td>
+            </tr>
+			 <tr>
+                <td>Email </td>
+                <td><input type="text" name="email" placeholder="enter email" /></td>
+            </tr>
+               
+            <tr>
+                <td>Gender</td>
+            <td>
+                    Male<input type="radio"  name="gender" value="male" checked>
+                    Female<input type="radio"  name="gender" value="female">
+                    Other<input type="radio" name="gender" value="other"> 
+                </td>
+            
+            </tr> 
+           
+            <tr>
+                <td> Language</td>
+                <td>
+                    English <input type="checkbox" name="English" name="English" value="English" checked>
+                   Non English<input type="checkbox" name="Non English" name="Non English" value="Non English">
+                </td>
+            </tr>
+			<tr>
+			<td>About</td>
+            <td><textarea id="w3review" name="about" rows="4" cols="30"></textarea></td>
+			</tr>
+			</table>
+			
+    
+</div> 
+
+<div class=a style="text-align: center;">
+<input type="submit" name="sub" value="Submit">
+<input type="button" onclick="resetForm()" value="Reset form">
+</div>
+</form>
+	
+
+<div class=a style="text-align: center;">
+<a href="construction.html">About us</a>&nbsp;
+<a href="construction.html">Privacy policy</a>&nbsp;
+<a href="construction.html">Contact us </a>&nbsp;
+</div>
+<div class=a style="text-align: center;">
+<a href="https://nuzha-anam.web.app">do you want to use google </a>
+</div>	
+
+   <h5 class=btitle>&copy 2016 ABC.com</h5>
+
+</div>
+</body>
+</html>
